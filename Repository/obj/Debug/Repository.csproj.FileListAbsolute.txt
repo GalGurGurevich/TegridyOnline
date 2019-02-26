@@ -1,0 +1,8 @@
+C:\Users\User\source\repos\WebProject\Repository\obj\Debug\Repository.csprojResolveAssemblyReference.cache
+C:\Users\User\source\repos\WebProject\Repository\obj\Debug\Repository.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\WebProject\Repository\bin\Debug\Repository.dll
+C:\Users\User\source\repos\WebProject\Repository\bin\Debug\Repository.pdb
+C:\Users\User\source\repos\WebProject\Repository\bin\Debug\Model.dll
+C:\Users\User\source\repos\WebProject\Repository\bin\Debug\Model.pdb
+C:\Users\User\source\repos\WebProject\Repository\obj\Debug\Repository.dll
+C:\Users\User\source\repos\WebProject\Repository\obj\Debug\Repository.pdb

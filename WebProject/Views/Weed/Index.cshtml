@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Model.Weed>
+@using WebProject.Helpers;
+
+@{
+    ViewBag.Title = "Index";
+    ViewBag.PageLabel = "Welcome To Tegridy Farm Online Weed Shop!";
+}
+
+@Html.ActionLink("Sort by name", "Index", new { sort = "name" })
+@Html.ActionLink("Sort by date", "Index", new { sort = "date" })
+
+<div>
+    @foreach (var item in Model)
+    {
+        <div class="product-tile">
+            <h4>
+                @Html.DisplayFor(modelItem => item.Title)
+            </h4>
+            
+            <div>
+                @if (item?.Pic != null)
+                {
+                    @Html.PicBase64(item.Pic, 150, 150)
+                }
+                else
+                {
+                    <img src="~/Content/no-image.png" height="150" width="150" />
+                }
+            </div>
+
+            <p>
+                @Html.DisplayFor(modelItem => item.Description)
+            </p>
+
+            <strong>
+                @Html.DisplayFor(modelItem => item.PriceForOunce)
+            </strong>
+
+            <div>
+                @Html.ActionLink("Details", "Details", new { id = item.WeedId })
+                &nbsp;&nbsp;&nbsp;
+                @Html.ActionLink("Add to Cart", "AddToCart", "Cart", new { id = item.WeedId }, null)
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Tegridy Farm Weed Shop</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <header>
+        @Html.ActionLink("Tegridy-Farm", "Index", "Weed")
+        @ViewBag.PageLabel
+    </header>
+    <div class="body">
+        <aside>
+            <section class="login">
+                @Html.Action("Login", "User")
+            </section>
+            <nav>
+                <ul>
+                    <li>@Html.ActionLink("Products", "Index", "weed")</li>
+                    <li>@Html.ActionLink("Register", "Register", "User")</li>
+                    @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Post Some Weed", "Create")</li>
+                    }
+                    <li>@Html.ActionLink("Shopping Cart", "Index", "Cart")</li>
+                    <li>@Html.ActionLink("About Us", "About", "Weed")</li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            @RenderBody()
+        </main>
+    </div>
+    <footer><p>&copy; @DateTime.Now.Year - Tegridy Farm Inc.</p></footer>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("scripts", false)
+</body>
+</html>

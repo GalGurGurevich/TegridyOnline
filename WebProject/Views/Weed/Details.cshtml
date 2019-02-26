@@ -1,0 +1,117 @@
+﻿@model Model.Weed
+@using WebProject.Helpers;
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>More Details</h2>
+
+<div>
+    <h4>Weed</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeedType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeedType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeedKind)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeedKind)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title) 
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LongDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LongDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeedStrength)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeedStrength)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceForOunce)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PriceForOunce)
+        </dd>
+
+        @if (Model?.Pic != null)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.Pic)
+            </dt>
+
+            <dd>
+                @Html.PicBase64(Model.Pic, 150, 150)
+            </dd>
+        }
+
+        @if (Model?.Pic2 != null)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.Pic2)
+            </dt>
+
+            <dd>
+                @Html.PicBase64(Model.Pic2, 150, 150)
+            </dd>
+        }
+
+        @if (Model?.Pic3 != null)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.Pic3)
+            </dt>
+
+            <dd>
+                @Html.PicBase64(Model.Pic3, 150, 150)
+            </dd>
+        }
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.WeedId }) |
+    @Html.ActionLink("Back to List", "Index") |
+    @Html.ActionLink("Add to Cart", "AddToCart", "Cart", new { id = Model.WeedId }, null)
+</p>
